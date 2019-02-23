@@ -8,9 +8,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var elem = event.target;
 		var hre = elem.getAttribute("href");
 		var eff = document.querySelector(hre);	
-		document.querySelector('#modal-one').classList.remove('show');
-		document.querySelector('#modal-two').classList.remove('show');
-		document.querySelector('#modal-three').classList.remove('show');
+		var modals = document.querySelectorAll('.modal');
+		for(var i = 0; i < modals.length; i++){
+			modals[i].classList.remove('show');	
+		}
 		eff.classList.add("show");
 		document.querySelector('#modal-overlay').classList.add('show');
 	};
